@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1"
+	xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+	<persistence-unit name="PersistenceRest" transaction-type="RESOURCE_LOCAL"><!-- transaction-type="JTA"--><!-- transaction-type="JTA" -->
+		<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+		<!-- jta-data-source>UserService</jta-data-source -->
+		<class>com.rest.test.restprj.dao.model.EmpDb</class>
+		<!--  class>com.rest.test.restprj.dao.bomDb.model.T43RBUEN</class-->
+		<!-- class>com.rest.test.restprj.dao.model.EmpDb</class> -->
+		<exclude-unlisted-classes>true</exclude-unlisted-classes>
+
+
+		<properties>
+			<property name="javax.persistence.database-product-name"
+				value="Derby"/>
+			<property name="javax.persistence.jdbc.driver" value="org.apache.derby.jdbc.ClientDriver" />
+			<property name="javax.persistence.jdbc.url" value="jdbc:derby://localhost:8914/DerbyDB" />
+			<property name="javax.persistence.jdbc.user" value="derbyuser" />
+			<property name="javax.persistence.jdbc.password" value="derbyuser" />
+			<!-- property name="eclipselink.jdbc.schema" value="public"/ -->
+
+			<property name="eclipselink.logging.level" value="INFO" />
+			<property name="eclipselink.logging.level.sql" value="FINE" />
+			<property name="eclipselink.logging.parameters" value="true" />
+			<property name="eclipselink.logging.file" value="logs/db.log" />
+			<!-- property name="eclipselink.profiler" value="PerformanceProfiler"/ -->
+			<property name="javax.persistence.schema-generation.database.action"
+				value="none" />
+			<!-- property name="javax.persistence.sql-load-script-source" value="META-INF/sql/data.sql"/ -->
+
+
+		</properties>
+	</persistence-unit>
+</persistence>

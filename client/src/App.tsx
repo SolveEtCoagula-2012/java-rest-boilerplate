@@ -1,11 +1,9 @@
 import React from 'react';
 import './App.css';
+import NavRouter from './routing';
+import Navigation from './containers/navigation/Navigation';
 
-interface AppState {
-  clicked: boolean;
-}
-
-class App extends React.Component<object, AppState> {
+class App extends React.Component<object, object> {
   
   constructor(props: any) {
     super(props);
@@ -15,18 +13,12 @@ class App extends React.Component<object, AppState> {
   }
 
   public render() {
-    const {clicked} = this.state;
 
     return (
       <div className="App">
-        <button onClick={this.onClick}>Click Me!!!</button>
-        {clicked ? <div style={{width: '100px', height: '100px', background: 'blue'}}></div> : <div style={{width: '100px', height: '100px', background: 'red'}}></div>}
-      </div>
+        <NavRouter />
+       </div>
     );
-  }
-
-  private onClick = (e: any) => {
-    this.setState({clicked: !this.state.clicked})
   }
 }
 
